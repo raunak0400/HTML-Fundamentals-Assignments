@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course registration form for online learning platform - TechAcademy">
+    <meta name="keywords" content="course registration, online learning, programming courses, tech education">
+    <meta name="author" content="TechAcademy">
+    <title>Course Registration - TechAcademy</title>
+</head>
+<body>
+    <header>
+        <h1>TechAcademy Course Registration</h1>
+        <p>Join thousands of students learning cutting-edge technologies</p>
+    </header>
+
+    <main>
+        <form method="POST" action="/submit-registration" enctype="multipart/form-data">
+            
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" min="1950-01-01" max="2010-12-31">
+                </div>
+
+                <div class="form-group">
+                    <label for="profilePicture">Profile Picture</label>
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+                    <small>Upload a professional photo (JPG, PNG, GIF - Max 5MB)</small>
+                </div>
+            </fieldset>
+
+            <!-- Academic Background Section -->
+            <fieldset>
+                <legend>Academic Background</legend>
+                
+                <div class="form-group">
+                    <label for="educationLevel">Current Education Level</label>
+                    <select id="educationLevel" name="educationLevel">
+                        <option value="">Select your education level</option>
+                        <option value="high-school">High School</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fieldOfStudy">Field of Study</label>
+                    <input type="text" id="fieldOfStudy" name="fieldOfStudy" placeholder="e.g., Computer Science, Engineering, Business">
+                </div>
+
+                <div class="form-group">
+                    <label for="programmingExperience">Years of Experience in Programming</label>
+                    <input type="number" id="programmingExperience" name="programmingExperience" min="0" max="20" placeholder="0">
+                </div>
+            </fieldset>
+
+            <!-- Course Preferences Section -->
+            <fieldset>
+                <legend>Course Preferences</legend>
+                
+                <div class="form-group">
+                    <label>Preferred Learning Mode *</label>
+                    <div class="radio-group">
+                        <input type="radio" id="online" name="learningMode" value="online" required>
+                        <label for="online">Online</label>
+                        
+                        <input type="radio" id="offline" name="learningMode" value="offline" required>
+                        <label for="offline">Offline</label>
+                        
+                        <input type="radio" id="hybrid" name="learningMode" value="hybrid" required>
+                        <label for="hybrid">Hybrid</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Course Categories (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="webDev" name="courseCategories" value="web-development">
+                        <label for="webDev">Web Development</label>
+                        
+                        <input type="checkbox" id="mobileDev" name="courseCategories" value="mobile-development">
+                        <label for="mobileDev">Mobile App Development</label>
+                        
+                        <input type="checkbox" id="dataScience" name="courseCategories" value="data-science">
+                        <label for="dataScience">Data Science</label>
+                        
+                        <input type="checkbox" id="aiMl" name="courseCategories" value="ai-ml">
+                        <label for="aiMl">AI/ML</label>
+                        
+                        <input type="checkbox" id="devops" name="courseCategories" value="devops">
+                        <label for="devops">DevOps</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Schedule *</label>
+                    <div class="radio-group">
+                        <input type="radio" id="weekdays" name="schedule" value="weekdays" required>
+                        <label for="weekdays">Weekdays</label>
+                        
+                        <input type="radio" id="weekends" name="schedule" value="weekends" required>
+                        <label for="weekends">Weekends</label>
+                        
+                        <input type="radio" id="flexible" name="schedule" value="flexible" required>
+                        <label for="flexible">Flexible</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Additional Information Section -->
+            <fieldset>
+                <legend>Additional Information</legend>
+                
+                <div class="form-group">
+                    <label for="experienceLevel">Programming Experience Level (1-10)</label>
+                    <input type="range" id="experienceLevel" name="experienceLevel" min="1" max="10" value="5">
+                    <div class="range-labels">
+                        <span>Beginner (1)</span>
+                        <span>Expert (10)</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequirements">Special Requirements or Comments</label>
+                    <textarea id="specialRequirements" name="specialRequirements" rows="4" placeholder="Any special accommodations, learning preferences, or additional information you'd like to share..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Contact Method *</label>
+                    <div class="radio-group">
+                        <input type="radio" id="contactEmail" name="contactMethod" value="email" required>
+                        <label for="contactEmail">Email</label>
+                        
+                        <input type="radio" id="contactPhone" name="contactMethod" value="phone" required>
+                        <label for="contactPhone">Phone</label>
+                        
+                        <input type="radio" id="contactSMS" name="contactMethod" value="sms" required>
+                        <label for="contactSMS">SMS</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Terms and Conditions Section -->
+            <fieldset>
+                <legend>Terms and Conditions</legend>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                        <label for="termsAgreement">I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> *</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">I want to receive newsletters and updates about new courses and promotions</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Submit and Reset Buttons -->
+            <div class="form-actions">
+                <button type="submit">Submit Registration</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TechAcademy. All rights reserved.</p>
+        <p>Need help? Contact us at <a href="mailto:support@techacademy.com">support@techacademy.com</a></p>
+    </footer>
+</body>
+</html>
